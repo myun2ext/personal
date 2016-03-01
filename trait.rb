@@ -1,4 +1,4 @@
-require 'activerecord'
+require './base'
 class Trait < ActiveRecord::Base
   class Migration < ActiveRecord::Migration
     def change
