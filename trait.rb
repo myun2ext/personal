@@ -15,6 +15,11 @@ class Trait < ActiveRecord::Base
     get '/c/:w/:of/:is' do
       Trait.create(what: params[:w], of: params[:of], is: params[:is], remembered_at: Time.now)
     end
-    get '/' do 'hello world.' end
+    get '/d/:id' do
+      Trait.find(params[:id]).delete
+    end
+    get '/' do
+      Trait.all.to_json
+    end
   end
 end
