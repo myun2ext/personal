@@ -11,8 +11,10 @@ class Trait < ActiveRecord::Base
       end
     end
   end
-
   class Renderer < Sinatra::Base
+    get '/c/:w/:of/:is' do
+      Trait.create(what: params[:w], of: params[:of], is: params[:is], remembered_at: Time.now)
+    end
     get '/' do 'hello world.' end
   end
 end
