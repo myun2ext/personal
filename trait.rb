@@ -11,4 +11,8 @@ class Trait < ActiveRecord::Base
       end
     end
   end
+
+  class Renderer < Sinatra::Base
+    get '/' do 'hello world.' end
+  end
 end
